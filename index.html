@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="it">
+<html lang="it" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,21 +8,34 @@
       name="description"
       content="Sito ufficiale one-page di La Pizzeria 2 a Misinto. Menu, orari e contatti."
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;700;800;900&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-      html {
-        scroll-behavior: smooth;
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              heading: ['Outfit', 'sans-serif'],
+            }
+          }
+        }
       }
+    </script>
+    <style>
+      h1, h2, h3, .font-heading { font-family: 'Outfit', sans-serif; }
     </style>
   </head>
-  <body class="bg-orange-50 text-gray-800">
-    <header class="sticky top-0 z-50 border-b border-red-100 bg-orange-50/95 backdrop-blur">
+  <body class="bg-[#FFFDF9] text-gray-800 antialiased selection:bg-red-200">
+    <header class="sticky top-0 z-50 border-b border-red-100/50 bg-white/85 backdrop-blur-md shadow-sm">
       <nav class="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-3">
-        <a href="#top" class="flex items-center gap-3 text-xl font-extrabold tracking-tight text-red-700 hover:text-red-600 transition">
-          <img src="logo.png" alt="Logo La Pizzeria 2" class="h-12 w-auto drop-shadow-md" />
+        <a href="#top" class="flex items-center gap-3 text-2xl font-black tracking-tight text-red-700 hover:text-red-600 transition font-heading">
+          <img src="logo.png" alt="Logo La Pizzeria 2" class="h-11 w-auto drop-shadow-sm" />
           La Pizzeria 2
         </a>
-        <ul class="flex items-center gap-4 text-sm font-semibold">
+        <ul class="hidden sm:flex items-center gap-6 text-sm font-semibold">
           <li><a href="#menu" class="transition hover:text-red-600">Il Menu</a></li>
           <li><a href="#orari" class="transition hover:text-red-600">Orari</a></li>
           <li><a href="#dove-siamo" class="transition hover:text-red-600">Dove Siamo</a></li>
@@ -32,172 +45,172 @@
 
     <main id="top">
       <section
-        class="relative flex min-h-[72vh] items-center justify-center bg-cover bg-center"
-        style="background-image: url('https://source.unsplash.com/random/1920x1080/?pizza');"
+        class="relative flex min-h-[65vh] items-center justify-center bg-cover bg-center"
+        style="background-image: url('https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=1920&auto=format&fit=crop');"
       >
-        <div class="absolute inset-0 bg-black/45"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/30"></div>
         <div class="relative mx-auto max-w-4xl px-4 text-center text-white">
-          <p class="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-orange-200">
+          <p class="mb-4 text-sm font-bold uppercase tracking-widest text-orange-200 drop-shadow">
             Misinto - Via Giuseppe Garibaldi, 7
           </p>
-          <h1 class="mb-4 text-4xl font-black leading-tight sm:text-5xl">
-            La tua pizza preferita, ogni sera a casa tua
+          <h1 class="mb-6 text-5xl font-black leading-tight sm:text-6xl drop-shadow-md">
+            La tua pizza preferita,<br class="hidden sm:block"/> ogni sera a casa tua
           </h1>
-          <p class="mx-auto mb-8 max-w-2xl text-base text-orange-100 sm:text-lg">
-            Impasto fragrante, ingredienti selezionati e tutto il gusto di La Pizzeria 2.
+          <p class="mx-auto mb-10 max-w-2xl text-lg text-gray-100 sm:text-xl drop-shadow-sm">
+            Impasto fragrante, ingredienti selezionati e tutto il gusto della nostra tradizione artigianale.
           </p>
           <a
             href="tel:INSERISCI_NUMERO"
-            class="inline-block rounded-xl bg-red-600 px-6 py-3 text-base font-bold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-red-700"
+            class="inline-flex items-center justify-center rounded-full bg-red-600 px-8 py-4 text-lg font-bold text-white shadow-xl transition hover:scale-105 hover:bg-red-700 active:scale-95"
           >
             Chiama per Ordinare
           </a>
         </div>
       </section>
 
-            <section id="menu" class="mx-auto w-full max-w-6xl px-4 py-14">
-        <div class="mb-8">
-          <h2 class="text-3xl font-extrabold text-red-700">Il Menu</h2>
-          <p class="mt-2 text-sm text-gray-600">
-            Trascrizione fedele dal menu cartaceo di La Pizzeria 2.
+            <section id="menu" class="mx-auto w-full max-w-6xl px-4 py-16">
+        <div class="mb-10 text-center">
+          <h2 class="text-4xl font-black text-red-700">Il Menu</h2>
+          <p class="mt-3 text-gray-500">
+            Trascrizione fedele dal menu cartaceo, sempre aggiornato.
           </p>
         </div>
 
         <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-          <article class="rounded-2xl border border-red-100 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+          <article class="rounded-3xl border border-red-50 bg-white p-6 shadow-sm transition hover:shadow-md ring-1 ring-black/[0.02]">
             <h3 class="mb-3 text-xl font-extrabold text-red-700">Le Nostre Pizze (1)</h3>
 <ul class="space-y-3 text-sm">
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">AMERICA</span><span class="font-semibold">€ 9,00</span></div><p class="text-gray-600">pom., mozz., bacon, hamburger, rucola, pomodoro fresco, cheddar, salsa burger</p></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">BACON & UOVO</span><span class="font-semibold">€ 8,00</span></div><p class="text-gray-600">pom., mozz., uovo, pancetta affumicata</p></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">BORLOTTIERA</span><span class="font-semibold">€ 8,00</span></div><p class="text-gray-600">pom., mozz., cipolla, borlotti, pancetta affumicata</p></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">BISMARK</span><span class="font-semibold">€ 7,50</span></div><p class="text-gray-600">pom., mozz., uovo, prosciutto</p></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">BOSCAIOLA</span><span class="font-semibold">€ 6,00</span></div><p class="text-gray-600">pom., mozz., funghi</p></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">BRIANZOLA</span><span class="font-semibold">€ 7,50</span></div><p class="text-gray-600">pom., mozz., zola, luganega</p></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">BUFALA</span><span class="font-semibold">€ 7,50</span></div><p class="text-gray-600">pom., bufala, pomodoro fresco, origano, basilico, olio</p></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">CALABRESE</span><span class="font-semibold">€ 6,50</span></div><p class="text-gray-600">pom., mozz., salame piccante</p></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">CAPRICCIOSA</span><span class="font-semibold">€ 7,50</span></div><p class="text-gray-600">pom., mozz., capriccio, olive, prosciutto</p></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">CASA</span><span class="font-semibold">€ 8,00</span></div><p class="text-gray-600">pom., mozz., luganega, brie, radicchio</p></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">CILIEGINA</span><span class="font-semibold">€ 6,50</span></div><p class="text-gray-600">pom., mozz., ciliegini</p></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">CIOCIARA</span><span class="font-semibold">€ 8,00</span></div><p class="text-gray-600">pom., mozz., porchetta, pecorino fresco</p></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">CLAUDIO</span><span class="font-semibold">€ 7,50</span></div><p class="text-gray-600">pom., mozz., origano, carciofi rustici, basilico, grana</p></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">COLONNATA</span><span class="font-semibold">€ 8,50</span></div><p class="text-gray-600">pom., mozz., ciliegini, lardo di colonnata, rucola</p></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">CONTADINA</span><span class="font-semibold">€ 7,50</span></div><p class="text-gray-600">pom., mozz., taleggio, prosciutto</p></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">COSACCA</span><span class="font-semibold">€ 7,00</span></div><p class="text-gray-600">pom., mozz., prosciutto, scamorza affumicata</p></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">CRUCCA</span><span class="font-semibold">€ 6,00</span></div><p class="text-gray-600">pom., mozz., wurstel</p></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">FANTASY</span><span class="font-semibold">€ 7,50</span></div><p class="text-gray-600">pom., mozz., praga, rucola, pomodoro fresco</p></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">FRANCY</span><span class="font-semibold">€ 7,50</span></div><p class="text-gray-600">pom., mozz., spinaci*, scamorza affumicata, melanzane</p></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">FRESCA</span><span class="font-semibold">€ 7,00</span></div><p class="text-gray-600">pom., mozz., tonno, pomodoro fresco</p></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">FRUTTI DI MARE</span><span class="font-semibold">€ 8,50</span></div><p class="text-gray-600">pom., mozz., frutti di mare*</p></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">FUMETTA</span><span class="font-semibold">€ 8,00</span></div><p class="text-gray-600">pom., mozz., speck, scamorza affumicata</p></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">GAMBERI & RUCOLA</span><span class="font-semibold">€ 8,00</span></div><p class="text-gray-600">pom., mozz., gamberi, rucola</p></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">GAS</span><span class="font-semibold">€ 7,50</span></div><p class="text-gray-600">pom., mozz., zola, cipolla, salame piccante</p></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">GEPPO</span><span class="font-semibold">€ 8,00</span></div><p class="text-gray-600">pom., mozz., melanzane, pom. fresco, basilico, olio, grana</p></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">GUSTOSA</span><span class="font-semibold">€ 8,00</span></div><p class="text-gray-600">pom., mozz., speck, taleggio</p></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">ITALIA</span><span class="font-semibold">€ 7,50</span></div><p class="text-gray-600">pom., mozz., zola, rucola, salame piccante, peperoni</p></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">LORENZ</span><span class="font-semibold">€ 8,00</span></div><p class="text-gray-600">1/2 pom., mozz., crudo, rucola, grana, 1/2 pom., mozz., brie</p></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">MARE BLU</span><span class="font-semibold">€ 7,00</span></div><p class="text-gray-600">pom., mozz., cipolla, tonno</p></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">MARE & MONTI</span><span class="font-semibold">€ 7,50</span></div><p class="text-gray-600">pom., mozz., funghi, gamberetti*</p></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">MARGHERITA</span><span class="font-semibold">€ 5,00</span></div><p class="text-gray-600">pomodoro, mozzarella</p></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">MARGHERITA SPECIAL</span><span class="font-semibold">€ 5,50</span></div><p class="text-gray-600">pomodoro, mozzarella, origano, olio, grana, basilico</p></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">MARINARA</span><span class="font-semibold">€ 4,50</span></div><p class="text-gray-600">pom., aglio, origano, olio</p></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">MEDITERRANEA</span><span class="font-semibold">€ 7,50</span></div><p class="text-gray-600">pom., mozz., pom. secchi, olive verdi, capperi, spianata calabra</p></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">MONTANARA</span><span class="font-semibold">€ 8,00</span></div><p class="text-gray-600">pom., mozz., funghi porcini*, bresaola</p></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">NADIA</span><span class="font-semibold">€ 7,50</span></div><p class="text-gray-600">pom., mozz., spianata calabra, acciughe, peperoni</p></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">NAPOLI</span><span class="font-semibold">€ 6,00</span></div><p class="text-gray-600">pom., mozz., acciughe, origano</p></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">NONNA</span><span class="font-semibold">€ 7,50</span></div><p class="text-gray-600">pom., mozz., carciofi rustici, pomodoro fresco</p></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">NORVEGESE</span><span class="font-semibold">€ 8,50</span></div><p class="text-gray-600">pom., mozz., gamberetti*, salmone*, rucola</p></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">PARIGINA</span><span class="font-semibold">€ 7,50</span></div><p class="text-gray-600">pom., mozz., brie, praga, funghi</p></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">PARMA</span><span class="font-semibold">€ 7,00</span></div><p class="text-gray-600">pom., mozz., prosciutto crudo</p></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">PATAPIZZA</span><span class="font-semibold">€ 6,00</span></div><p class="text-gray-600">pom., mozz., patatine fritte*</p></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">PEPERONE</span><span class="font-semibold">€ 6,50</span></div><p class="text-gray-600">pom., mozz., peperoni</p></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">PIETRO</span><span class="font-semibold">€ 6,00</span></div><p class="text-gray-600">pom., mozz., salame dolce</p></li>
-              <li class=""><div class="flex items-center justify-between gap-2"><span class="font-bold">PORCHETTA</span><span class="font-semibold">€ 7,50</span></div><p class="text-gray-600">pom., mozz., zola, porchetta</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">AMERICA</span><span class="font-bold text-red-700">€ 9,00</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., mozz., bacon, hamburger, rucola, pomodoro fresco, cheddar, salsa burger</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">BACON & UOVO</span><span class="font-bold text-red-700">€ 8,00</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., mozz., uovo, pancetta affumicata</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">BORLOTTIERA</span><span class="font-bold text-red-700">€ 8,00</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., mozz., cipolla, borlotti, pancetta affumicata</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">BISMARK</span><span class="font-bold text-red-700">€ 7,50</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., mozz., uovo, prosciutto</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">BOSCAIOLA</span><span class="font-bold text-red-700">€ 6,00</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., mozz., funghi</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">BRIANZOLA</span><span class="font-bold text-red-700">€ 7,50</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., mozz., zola, luganega</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">BUFALA</span><span class="font-bold text-red-700">€ 7,50</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., bufala, pomodoro fresco, origano, basilico, olio</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">CALABRESE</span><span class="font-bold text-red-700">€ 6,50</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., mozz., salame piccante</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">CAPRICCIOSA</span><span class="font-bold text-red-700">€ 7,50</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., mozz., capriccio, olive, prosciutto</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">CASA</span><span class="font-bold text-red-700">€ 8,00</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., mozz., luganega, brie, radicchio</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">CILIEGINA</span><span class="font-bold text-red-700">€ 6,50</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., mozz., ciliegini</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">CIOCIARA</span><span class="font-bold text-red-700">€ 8,00</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., mozz., porchetta, pecorino fresco</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">CLAUDIO</span><span class="font-bold text-red-700">€ 7,50</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., mozz., origano, carciofi rustici, basilico, grana</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">COLONNATA</span><span class="font-bold text-red-700">€ 8,50</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., mozz., ciliegini, lardo di colonnata, rucola</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">CONTADINA</span><span class="font-bold text-red-700">€ 7,50</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., mozz., taleggio, prosciutto</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">COSACCA</span><span class="font-bold text-red-700">€ 7,00</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., mozz., prosciutto, scamorza affumicata</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">CRUCCA</span><span class="font-bold text-red-700">€ 6,00</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., mozz., wurstel</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">FANTASY</span><span class="font-bold text-red-700">€ 7,50</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., mozz., praga, rucola, pomodoro fresco</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">FRANCY</span><span class="font-bold text-red-700">€ 7,50</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., mozz., spinaci*, scamorza affumicata, melanzane</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">FRESCA</span><span class="font-bold text-red-700">€ 7,00</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., mozz., tonno, pomodoro fresco</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">FRUTTI DI MARE</span><span class="font-bold text-red-700">€ 8,50</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., mozz., frutti di mare*</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">FUMETTA</span><span class="font-bold text-red-700">€ 8,00</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., mozz., speck, scamorza affumicata</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">GAMBERI & RUCOLA</span><span class="font-bold text-red-700">€ 8,00</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., mozz., gamberi, rucola</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">GAS</span><span class="font-bold text-red-700">€ 7,50</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., mozz., zola, cipolla, salame piccante</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">GEPPO</span><span class="font-bold text-red-700">€ 8,00</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., mozz., melanzane, pom. fresco, basilico, olio, grana</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">GUSTOSA</span><span class="font-bold text-red-700">€ 8,00</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., mozz., speck, taleggio</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">ITALIA</span><span class="font-bold text-red-700">€ 7,50</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., mozz., zola, rucola, salame piccante, peperoni</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">LORENZ</span><span class="font-bold text-red-700">€ 8,00</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">1/2 pom., mozz., crudo, rucola, grana, 1/2 pom., mozz., brie</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">MARE BLU</span><span class="font-bold text-red-700">€ 7,00</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., mozz., cipolla, tonno</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">MARE & MONTI</span><span class="font-bold text-red-700">€ 7,50</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., mozz., funghi, gamberetti*</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">MARGHERITA</span><span class="font-bold text-red-700">€ 5,00</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pomodoro, mozzarella</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">MARGHERITA SPECIAL</span><span class="font-bold text-red-700">€ 5,50</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pomodoro, mozzarella, origano, olio, grana, basilico</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">MARINARA</span><span class="font-bold text-red-700">€ 4,50</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., aglio, origano, olio</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">MEDITERRANEA</span><span class="font-bold text-red-700">€ 7,50</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., mozz., pom. secchi, olive verdi, capperi, spianata calabra</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">MONTANARA</span><span class="font-bold text-red-700">€ 8,00</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., mozz., funghi porcini*, bresaola</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">NADIA</span><span class="font-bold text-red-700">€ 7,50</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., mozz., spianata calabra, acciughe, peperoni</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">NAPOLI</span><span class="font-bold text-red-700">€ 6,00</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., mozz., acciughe, origano</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">NONNA</span><span class="font-bold text-red-700">€ 7,50</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., mozz., carciofi rustici, pomodoro fresco</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">NORVEGESE</span><span class="font-bold text-red-700">€ 8,50</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., mozz., gamberetti*, salmone*, rucola</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">PARIGINA</span><span class="font-bold text-red-700">€ 7,50</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., mozz., brie, praga, funghi</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">PARMA</span><span class="font-bold text-red-700">€ 7,00</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., mozz., prosciutto crudo</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">PATAPIZZA</span><span class="font-bold text-red-700">€ 6,00</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., mozz., patatine fritte*</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">PEPERONE</span><span class="font-bold text-red-700">€ 6,50</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., mozz., peperoni</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">PIETRO</span><span class="font-bold text-red-700">€ 6,00</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., mozz., salame dolce</p></li>
+              <li class="group pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">PORCHETTA</span><span class="font-bold text-red-700">€ 7,50</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., mozz., zola, porchetta</p></li>
             </ul>
           </article>
 
-          <article class="rounded-2xl border border-red-100 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+          <article class="rounded-3xl border border-red-50 bg-white p-6 shadow-sm transition hover:shadow-md ring-1 ring-black/[0.02]">
             <h3 class="mb-3 text-xl font-extrabold text-red-700">Le Nostre Pizze (2)</h3>
 <ul class="space-y-3 text-sm">
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">PRATAIOLA</span><span class="font-semibold">€ 8,00</span></div><p class="text-gray-600">pom., mozz., emmental, salame piccante, peperoni, funghi, aglio, origano</p></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">PROSCIUTTO</span><span class="font-semibold">€ 6,00</span></div><p class="text-gray-600">pom., mozz., prosciutto</p></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">PROSCIUTTO & CARCIOFI</span><span class="font-semibold">€ 7,50</span></div><p class="text-gray-600">pom., mozz., prosciutto, carciofi</p></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">PROSCIUTTO & FUNGHI</span><span class="font-semibold">€ 7,00</span></div><p class="text-gray-600">pom., mozz., prosciutto e funghi</p></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">PUGLIESE</span><span class="font-semibold">€ 6,00</span></div><p class="text-gray-600">pom., mozz., cipolle, origano</p></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">RICOTTA & SPINACI</span><span class="font-semibold">€ 7,00</span></div><p class="text-gray-600">pom., mozz., ricotta, spinaci*, grana</p></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">ROMANA</span><span class="font-semibold">€ 6,50</span></div><p class="text-gray-600">pom., mozz., acciughe, capperi, origano</p></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">RUCOLA</span><span class="font-semibold">€ 6,00</span></div><p class="text-gray-600">pom., mozz., rucola</p></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">RUSTICA</span><span class="font-semibold">€ 7,50</span></div><p class="text-gray-600">pom., mozz., melanzane, carciofi rustici, grana</p></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">SALMONE</span><span class="font-semibold">€ 7,50</span></div><p class="text-gray-600">pom., mozz., salmone*</p></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">SALSICCIA</span><span class="font-semibold">€ 6,00</span></div><p class="text-gray-600">pom., mozz., salsiccia</p></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">SALSICCIA & FRIARIELLI</span><span class="font-semibold">€ 7,50</span></div><p class="text-gray-600">pom., mozz., salsiccia, friarielli</p></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">SAPORITA</span><span class="font-semibold">€ 7,50</span></div><p class="text-gray-600">pom., mozz., salame piccante, melanzane, basilico, aglio</p></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">SCARPARO</span><span class="font-semibold">€ 8,00</span></div><p class="text-gray-600">pom., mozz., salame picc., melanzane, peperoni, rucola, olio</p></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">SCIACALLO</span><span class="font-semibold">€ 8,00</span></div><p class="text-gray-600">pom., mozz., sfilacci, zola, guanciale</p></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">SFIZIOSA</span><span class="font-semibold">€ 8,00</span></div><p class="text-gray-600">pom., mozz., praga, carciofi rustici</p></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">SOTTOBOSCO</span><span class="font-semibold">€ 7,50</span></div><p class="text-gray-600">pom., mozz., porcini e rucola</p></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">TECCHIO</span><span class="font-semibold">€ 7,50</span></div><p class="text-gray-600">pom., mozz., brie, funghi porcini*</p></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">TEO</span><span class="font-semibold">€ 8,00</span></div><p class="text-gray-600">pom., mozz., prosciutto, panna, porcini</p></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">TEDESCA</span><span class="font-semibold">€ 7,00</span></div><p class="text-gray-600">pom., mozz., wurstel, crauti, senape</p></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">TIROLESE</span><span class="font-semibold">€ 7,50</span></div><p class="text-gray-600">pom., mozz., speck, grana</p></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">TONNO</span><span class="font-semibold">€ 6,00</span></div><p class="text-gray-600">pom., mozz., tonno</p></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">TRIS GRIGLIATA</span><span class="font-semibold">€ 7,00</span></div><p class="text-gray-600">pom., mozz., zucchine, peperoni, melanzane</p></li>
-              <li class=""><div class="flex items-center justify-between gap-2"><span class="font-bold">TROPEANA</span><span class="font-semibold">€ 8,00</span></div><p class="text-gray-600">pom., mozz., nduja, cipolla di tropea, pecorino</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">PRATAIOLA</span><span class="font-bold text-red-700">€ 8,00</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., mozz., emmental, salame piccante, peperoni, funghi, aglio, origano</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">PROSCIUTTO</span><span class="font-bold text-red-700">€ 6,00</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., mozz., prosciutto</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">PROSCIUTTO & CARCIOFI</span><span class="font-bold text-red-700">€ 7,50</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., mozz., prosciutto, carciofi</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">PROSCIUTTO & FUNGHI</span><span class="font-bold text-red-700">€ 7,00</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., mozz., prosciutto e funghi</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">PUGLIESE</span><span class="font-bold text-red-700">€ 6,00</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., mozz., cipolle, origano</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">RICOTTA & SPINACI</span><span class="font-bold text-red-700">€ 7,00</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., mozz., ricotta, spinaci*, grana</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">ROMANA</span><span class="font-bold text-red-700">€ 6,50</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., mozz., acciughe, capperi, origano</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">RUCOLA</span><span class="font-bold text-red-700">€ 6,00</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., mozz., rucola</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">RUSTICA</span><span class="font-bold text-red-700">€ 7,50</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., mozz., melanzane, carciofi rustici, grana</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">SALMONE</span><span class="font-bold text-red-700">€ 7,50</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., mozz., salmone*</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">SALSICCIA</span><span class="font-bold text-red-700">€ 6,00</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., mozz., salsiccia</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">SALSICCIA & FRIARIELLI</span><span class="font-bold text-red-700">€ 7,50</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., mozz., salsiccia, friarielli</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">SAPORITA</span><span class="font-bold text-red-700">€ 7,50</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., mozz., salame piccante, melanzane, basilico, aglio</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">SCARPARO</span><span class="font-bold text-red-700">€ 8,00</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., mozz., salame picc., melanzane, peperoni, rucola, olio</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">SCIACALLO</span><span class="font-bold text-red-700">€ 8,00</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., mozz., sfilacci, zola, guanciale</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">SFIZIOSA</span><span class="font-bold text-red-700">€ 8,00</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., mozz., praga, carciofi rustici</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">SOTTOBOSCO</span><span class="font-bold text-red-700">€ 7,50</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., mozz., porcini e rucola</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">TECCHIO</span><span class="font-bold text-red-700">€ 7,50</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., mozz., brie, funghi porcini*</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">TEO</span><span class="font-bold text-red-700">€ 8,00</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., mozz., prosciutto, panna, porcini</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">TEDESCA</span><span class="font-bold text-red-700">€ 7,00</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., mozz., wurstel, crauti, senape</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">TIROLESE</span><span class="font-bold text-red-700">€ 7,50</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., mozz., speck, grana</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">TONNO</span><span class="font-bold text-red-700">€ 6,00</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., mozz., tonno</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">TRIS GRIGLIATA</span><span class="font-bold text-red-700">€ 7,00</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., mozz., zucchine, peperoni, melanzane</p></li>
+              <li class="group pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">TROPEANA</span><span class="font-bold text-red-700">€ 8,00</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., mozz., nduja, cipolla di tropea, pecorino</p></li>
             </ul>
 
             <h3 class="mb-3 mt-6 text-xl font-extrabold text-red-700">Calzoni</h3>
 <ul class="space-y-3 text-sm">
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">CALZONE LISCIO</span><span class="font-semibold">€ 6,50</span></div><p class="text-gray-600">pom., mozz., prosciutto, grana, olio</p></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">CALZONE FARCITO</span><span class="font-semibold">€ 7,50</span></div><p class="text-gray-600">pom., mozz., farcitura, prosciutto, grana, olio</p></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">CALZONE 4 FORMAGGI</span><span class="font-semibold">€ 7,50</span></div><p class="text-gray-600">pom., mozz., zola, emmental, grana, olio</p></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">CALZONE VEGETARIANO</span><span class="font-semibold">€ 8,50</span></div><p class="text-gray-600">pom., mozz., melanzane, carote, zucchine, spinaci*, borlotti, peperoni, grana, olio, mais</p></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">CALZONE FRUTTI DI MARE</span><span class="font-semibold">€ 9,00</span></div><p class="text-gray-600">pom., mozz., frutti di mare*</p></li>
-              <li class=""><div class="flex items-center justify-between gap-2"><span class="font-bold">CALZONE RICOTTA E SPINACI</span><span class="font-semibold">€ 7,50</span></div><p class="text-gray-600">pom., mozz., ricotta, spinaci*, grana, olio</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">CALZONE LISCIO</span><span class="font-bold text-red-700">€ 6,50</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., mozz., prosciutto, grana, olio</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">CALZONE FARCITO</span><span class="font-bold text-red-700">€ 7,50</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., mozz., farcitura, prosciutto, grana, olio</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">CALZONE 4 FORMAGGI</span><span class="font-bold text-red-700">€ 7,50</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., mozz., zola, emmental, grana, olio</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">CALZONE VEGETARIANO</span><span class="font-bold text-red-700">€ 8,50</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., mozz., melanzane, carote, zucchine, spinaci*, borlotti, peperoni, grana, olio, mais</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">CALZONE FRUTTI DI MARE</span><span class="font-bold text-red-700">€ 9,00</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., mozz., frutti di mare*</p></li>
+              <li class="group pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">CALZONE RICOTTA E SPINACI</span><span class="font-bold text-red-700">€ 7,50</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., mozz., ricotta, spinaci*, grana, olio</p></li>
             </ul>
 
             <h3 class="mb-3 mt-6 text-xl font-extrabold text-red-700">Voglia di Dolci</h3>
 <ul class="space-y-3 text-sm">
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">DOLCE NOVITA'</span><span class="font-semibold">€ 5,00</span></div><p class="text-gray-600">calzoncino Nutella, noccioline, zucchero a velo</p></li>
-              <li class=""><div class="flex items-center justify-between gap-2"><span class="font-bold">MEZZA LUNA</span><span class="font-semibold">€ 4,50</span></div><p class="text-gray-600">calzoncino ripieno di Nutella</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">DOLCE NOVITA'</span><span class="font-bold text-red-700">€ 5,00</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">calzoncino Nutella, noccioline, zucchero a velo</p></li>
+              <li class="group pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">MEZZA LUNA</span><span class="font-bold text-red-700">€ 4,50</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">calzoncino ripieno di Nutella</p></li>
             </ul>
           </article>
 
-          <article class="rounded-2xl border border-red-100 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+          <article class="rounded-3xl border border-red-50 bg-white p-6 shadow-sm transition hover:shadow-md ring-1 ring-black/[0.02]">
             <h3 class="mb-3 text-xl font-extrabold text-red-700">Le Nostre Pizze (3)</h3>
 <ul class="space-y-3 text-sm">
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">VALTELLINA</span><span class="font-semibold">€ 8,50</span></div><p class="text-gray-600">pom., mozz., bresaola, rucola, olio, grana</p></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">VEGETARIANA</span><span class="font-semibold">€ 8,00</span></div><p class="text-gray-600">pom., mozz., melanzane, carote, zucchine, spinaci*, borlotti, peperoni, mais</p></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">VIOLA</span><span class="font-semibold">€ 8,00</span></div><p class="text-gray-600">pom., mozz., pancetta in cottura, radicchio, ciliegini</p></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">WORNOFF</span><span class="font-semibold">€ 7,00</span></div><p class="text-gray-600">pom., mozz., asparagi, uovo</p></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">WURSTEL & PATATINE</span><span class="font-semibold">€ 7,00</span></div><p class="text-gray-600">pom., mozz., wurstel, patatine fritte*</p></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">ZINGARA</span><span class="font-semibold">€ 7,00</span></div><p class="text-gray-600">pom., mozz., peperoni, pancetta affumicata</p></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">ZOLA</span><span class="font-semibold">€ 6,00</span></div><p class="text-gray-600">pom., mozz., zola</p></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">4 FORMAGGI</span><span class="font-semibold">€ 7,00</span></div><p class="text-gray-600">pom., mozzarella, zola, emmental, grana</p></li>
-              <li class=""><div class="flex items-center justify-between gap-2"><span class="font-bold">4 STAGIONI</span><span class="font-semibold">€ 7,00</span></div><p class="text-gray-600">pom., mozz., prosciutto, capriccio, funghi, carciofi</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">VALTELLINA</span><span class="font-bold text-red-700">€ 8,50</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., mozz., bresaola, rucola, olio, grana</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">VEGETARIANA</span><span class="font-bold text-red-700">€ 8,00</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., mozz., melanzane, carote, zucchine, spinaci*, borlotti, peperoni, mais</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">VIOLA</span><span class="font-bold text-red-700">€ 8,00</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., mozz., pancetta in cottura, radicchio, ciliegini</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">WORNOFF</span><span class="font-bold text-red-700">€ 7,00</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., mozz., asparagi, uovo</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">WURSTEL & PATATINE</span><span class="font-bold text-red-700">€ 7,00</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., mozz., wurstel, patatine fritte*</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">ZINGARA</span><span class="font-bold text-red-700">€ 7,00</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., mozz., peperoni, pancetta affumicata</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">ZOLA</span><span class="font-bold text-red-700">€ 6,00</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., mozz., zola</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">4 FORMAGGI</span><span class="font-bold text-red-700">€ 7,00</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., mozzarella, zola, emmental, grana</p></li>
+              <li class="group pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">4 STAGIONI</span><span class="font-bold text-red-700">€ 7,00</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">pom., mozz., prosciutto, capriccio, funghi, carciofi</p></li>
             </ul>
 
             <h3 class="mb-3 mt-6 text-xl font-extrabold text-red-700">Le Nostre Teglie</h3>
             <p class="text-xs text-red-600 mb-2 font-bold">(su ordinazione 1 giorno prima)</p>
 <ul class="space-y-3 text-sm">
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">MARGHERITA</span><span class="font-semibold">€ 20,00</span></div></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">FARCITA</span><span class="font-semibold">€ 24,00</span></div></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">FOCACCIA</span><span class="font-semibold">€ 16,00</span></div></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">VASCHETTA DI PATATINE FRITTE GRANDE</span><span class="font-semibold">€ 3,00</span></div></li>
-              <li class=""><div class="flex items-center justify-between gap-2"><span class="font-bold">VASCHETTA DI PATATINE FRITTE PICCOLA</span><span class="font-semibold">€ 2,00</span></div></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">MARGHERITA</span><span class="font-bold text-red-700">€ 20,00</span></div></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">FARCITA</span><span class="font-bold text-red-700">€ 24,00</span></div></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">FOCACCIA</span><span class="font-bold text-red-700">€ 16,00</span></div></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">VASCHETTA DI PATATINE FRITTE GRANDE</span><span class="font-bold text-red-700">€ 3,00</span></div></li>
+              <li class="group pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">VASCHETTA DI PATATINE FRITTE PICCOLA</span><span class="font-bold text-red-700">€ 2,00</span></div></li>
             </ul>
 
             <h3 class="mb-3 mt-6 text-xl font-extrabold text-red-700">Pizze Bianche</h3>
 <ul class="space-y-3 text-sm">
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">BIANCANEVE</span><span class="font-semibold">€ 5,00</span></div><p class="text-gray-600">mozzarella doppia</p></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">MELINDA</span><span class="font-semibold">€ 7,00</span></div><p class="text-gray-600">mozzarella, zola, mele, grana</p></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">POPEYE BIANCA</span><span class="font-semibold">€ 6,50</span></div><p class="text-gray-600">mozzarella, spinaci*, grana</p></li>
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">VIENNESE</span><span class="font-semibold">€ 8,00</span></div><p class="text-gray-600">mozzarella, praga, scamorza affumicata, pomodoro fresco</p></li>
-              <li class=""><div class="flex items-center justify-between gap-2"><span class="font-bold">YELLOW</span><span class="font-semibold">€ 8,00</span></div><p class="text-gray-600">mozzarella, zafferano, taleggio, funghi, luganega</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">BIANCANEVE</span><span class="font-bold text-red-700">€ 5,00</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">mozzarella doppia</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">MELINDA</span><span class="font-bold text-red-700">€ 7,00</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">mozzarella, zola, mele, grana</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">POPEYE BIANCA</span><span class="font-bold text-red-700">€ 6,50</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">mozzarella, spinaci*, grana</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">VIENNESE</span><span class="font-bold text-red-700">€ 8,00</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">mozzarella, praga, scamorza affumicata, pomodoro fresco</p></li>
+              <li class="group pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">YELLOW</span><span class="font-bold text-red-700">€ 8,00</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">mozzarella, zafferano, taleggio, funghi, luganega</p></li>
             </ul>
 
             <h3 class="mb-3 mt-6 text-xl font-extrabold text-red-700">Focacce</h3>
 <ul class="space-y-3 text-sm">
-              <li class="border-b border-dashed border-red-100 pb-2"><div class="flex items-center justify-between gap-2"><span class="font-bold">FOCACCIA LISCIA BABY</span><span class="font-semibold">€ 4,00</span></div><p class="text-gray-600">origano, olio, sale</p></li>
-              <li class=""><div class="flex items-center justify-between gap-2"><span class="font-bold">FOCACCIA + AFFETTATO BABY</span><span class="font-semibold">€ 5,00</span></div><p class="text-gray-600">affettato a piacere</p></li>
+              <li class="group border-b border-dashed border-red-100/60 pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">FOCACCIA LISCIA BABY</span><span class="font-bold text-red-700">€ 4,00</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">origano, olio, sale</p></li>
+              <li class="group pb-3 pt-2 px-2 -mx-2 transition-colors hover:bg-orange-50/50 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-gray-900">FOCACCIA + AFFETTATO BABY</span><span class="font-bold text-red-700">€ 5,00</span></div><p class="text-gray-500 text-xs mt-1 leading-relaxed">affettato a piacere</p></li>
             </ul>
 
             <div class="mt-4 p-3 bg-red-50 rounded-xl text-center text-red-800 font-bold border border-red-200">
@@ -207,32 +220,35 @@
         </div>
       </section>
 
-      <section id="orari" class="bg-white py-14">
+      <section id="orari" class="bg-white py-16 border-t border-orange-100/50">
         <div class="mx-auto max-w-6xl px-4">
-          <h2 class="text-3xl font-extrabold text-red-700">Orari e Info</h2>
-          <div class="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2">
-            <div class="rounded-2xl border border-red-100 bg-orange-50 p-5">
-              <h3 class="mb-3 text-lg font-bold text-gray-900">Orario Apertura</h3>
-              <ul class="space-y-2 text-sm">
-                <li class="flex justify-between gap-2 border-b border-dashed border-red-100 pb-2">
-                  <span class="font-semibold">Lunedi - Sabato</span>
-                  <span>11:30 - 13:30 / 18:00 - 21:00</span>
+          <div class="mb-10 text-center">
+            <h2 class="text-4xl font-black text-red-700">Orari e Info</h2>
+            <p class="mt-3 text-gray-500">Vieni a trovarci o chiamaci per ordinare.</p>
+          </div>
+          <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
+            <div class="rounded-3xl border border-red-50 bg-[#FFFDF9] p-8 shadow-sm ring-1 ring-black/[0.02]">
+              <h3 class="mb-5 text-2xl font-bold text-gray-900 font-heading">Orario di Apertura</h3>
+              <ul class="space-y-4 text-base">
+                <li class="flex justify-between gap-2 border-b border-dashed border-red-100/60 pb-4">
+                  <span class="font-semibold text-gray-700">Lunedi - Sabato</span>
+                  <span class="font-medium">11:30 - 13:30 / 18:00 - 21:00</span>
                 </li>
-                <li class="flex justify-between gap-2 border-b border-dashed border-red-100 pb-2">
-                  <span class="font-semibold">Domenica</span>
-                  <span>18:00 - 21:00</span>
+                <li class="flex justify-between gap-2 border-b border-dashed border-red-100/60 pb-4">
+                  <span class="font-semibold text-gray-700">Domenica</span>
+                  <span class="font-medium">18:00 - 21:00</span>
                 </li>
-                <li class="flex justify-between gap-2">
-                  <span class="font-semibold">Martedi</span>
-                  <span class="text-red-700">Chiuso</span>
+                <li class="flex justify-between gap-2 pt-1">
+                  <span class="font-semibold text-gray-700">Martedi</span>
+                  <span class="font-bold text-red-600 bg-red-50 px-3 py-1 rounded-full text-sm">Chiuso</span>
                 </li>
               </ul>
             </div>
 
-            <div id="dove-siamo" class="rounded-2xl border border-red-100 bg-orange-50 p-5">
-              <h3 class="mb-3 text-lg font-bold text-gray-900">Dove Siamo</h3>
-              <p class="text-sm">Via Giuseppe Garibaldi 7, Misinto (MB)</p>
-              <div class="mt-4 overflow-hidden rounded-xl border border-red-100">
+            <div id="dove-siamo" class="rounded-3xl border border-red-50 bg-[#FFFDF9] p-8 shadow-sm ring-1 ring-black/[0.02]">
+              <h3 class="mb-3 text-2xl font-bold text-gray-900 font-heading">Dove Siamo</h3>
+              <p class="text-gray-500 mb-5">Via Giuseppe Garibaldi 7, Misinto (MB)</p>
+              <div class="overflow-hidden rounded-2xl border border-red-100/50 shadow-inner bg-gray-100">
                 <iframe
                   title="Mappa La Pizzeria 2"
                   src="https://www.google.com/maps?q=Via+Giuseppe+Garibaldi+7,+Misinto&output=embed"
@@ -241,6 +257,7 @@
                   style="border: 0"
                   loading="lazy"
                   referrerpolicy="no-referrer-when-downgrade"
+                  class="grayscale-[20%] contrast-[1.1] opacity-90 transition hover:grayscale-0 hover:opacity-100"
                 ></iframe>
               </div>
             </div>
@@ -249,10 +266,10 @@
       </section>
     </main>
 
-    <footer class="border-t border-red-100 bg-orange-50 py-6">
-      <div class="mx-auto flex max-w-6xl flex-col gap-2 px-4 text-center text-sm text-gray-600 sm:flex-row sm:items-center sm:justify-between sm:text-left">
-        <p>&copy; 2026 La Pizzeria 2 - Tutti i diritti riservati.</p>
-        <a href="#" class="font-semibold text-red-700 transition hover:text-red-600">Sviluppato da Codex</a>
+    <footer class="border-t border-orange-100/50 bg-[#FFFDF9] py-8">
+      <div class="mx-auto flex max-w-6xl flex-col gap-4 px-4 text-center text-sm text-gray-500 sm:flex-row sm:items-center sm:justify-between sm:text-left">
+        <p>&copy; 2026 La Pizzeria 2. Tutti i diritti riservati.</p>
+        <a href="#" class="font-medium text-red-700 transition hover:text-red-600">Sviluppato da Codex</a>
       </div>
     </footer>
   </body>
